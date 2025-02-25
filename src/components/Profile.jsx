@@ -32,11 +32,7 @@ const Profile = () => {
         if (isEditing) {
             try {
                 const token = localStorage.getItem("token");
-                const res = await axios.put(
-                    `${url}/editprofile`,
-                    { ...userData },
-                    { headers: { Authorization: `Bearer ${token}` } }
-                );
+                const res = await axios.put( `${url}/editprofile`, { ...userData }, { headers: { Authorization: `Bearer ${token}` } } );
                 if (res.status === 200) {
                     alert("Profile updated successfully!");
                     fetchUserData();

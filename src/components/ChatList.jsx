@@ -19,7 +19,7 @@ const ChatList = ({ search }) => {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    socket.current = io("http://localhost:3000", { transports: ["websocket"] });
+    socket.current = io("https://chat-server-19dt.onrender.com", { transports: ["websocket"] });
     socket.current.on("updatechatlist", () => {
       fetchChats(); 
     });

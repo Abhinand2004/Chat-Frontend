@@ -189,7 +189,7 @@ const ChatBox = ({ chatId }) => {
     };
 
     useEffect(() => {
-        socket.current = io("http://localhost:3000", { transports: ["websocket"] });
+        socket.current = io("https://chat-server-19dt.onrender.com", { transports: ["websocket"] });
         scrollToBottom();
         socket.current.on("connect", () => {
             if (my_id) {
